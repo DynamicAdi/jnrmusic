@@ -6,7 +6,7 @@ from pyrogram.types import (
     Message,
 )
 from youtube_search import YoutubeSearch 
-
+query = ""
 results = YoutubeSearch(query, max_results=1).to_dict()
 
 
