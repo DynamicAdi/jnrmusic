@@ -12,8 +12,8 @@ async def linkquery(message):
    for i in message.command[1:]:
        query += " " + str(i)
    print(query)
-   results = YoutubeSearch(query, max_results=1).to_dict()
 
+results = YoutubeSearch(query, max_results=1).to_dict()
 link = f"https://youtube.com{results[0]['url_suffix']}"
   
 
