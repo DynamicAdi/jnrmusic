@@ -15,7 +15,7 @@ def play_markup(videoid, user_id):
                 InlineKeyboardButton(text="⏹️", callback_data=f'stopvc2')
             ],
             [
-                InlineKeyboardButton(text="🔎 Search Lyrics", callback_data=f'lyrics {videoid}|{user_id}'),
+                InlineKeyboardButton(text="Oɴ  Yᴏᴜᴛᴜʙᴇ  🎥", url=f'{link}'),
                 InlineKeyboardButton(text="🔗 Other Menu", callback_data=f'other {videoid}|{user_id}'),
             ],
             [      
