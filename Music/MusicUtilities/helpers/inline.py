@@ -6,6 +6,9 @@ from pyrogram.types import (
     Message,
 )
 
+link = f"https://www.youtube.com/watch?v={videoid}"
+  
+
 def play_markup(videoid, user_id):
     buttons= [
             [
@@ -27,8 +30,7 @@ def play_markup(videoid, user_id):
 
 def others_markup(videoid, user_id):
     buttons= [
-            [
-                InlineKeyboardButton(text="➕ Your Playlist", callback_data=f'playlist {videoid}|{user_id}'),
+            [                InlineKeyboardButton(text="➕ Your Playlist", callback_data=f'playlist {videoid}|{user_id}'),
                 InlineKeyboardButton(text="➕ Group Playlist", callback_data=f'group_playlist {videoid}|{user_id}')
             ],
             [
