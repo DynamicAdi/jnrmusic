@@ -1,3 +1,4 @@
+from pyrogram.types import Message
 from pyrogram.types import (
     CallbackQuery,
     InlineKeyboardButton,
@@ -7,13 +8,14 @@ from pyrogram.types import (
 )
 from youtube_search import YoutubeSearch
 
-async def linkquery(message):
+async def query(_, message: Message):
    query = ""
    for i in message.command[1:]:
        query += " " + str(i)
    print(query)
 
 results = YoutubeSearch(query, max_results=1).to_dict()
+
 link = f"https://youtube.com{results[0]['url_suffix']}"
   
 
