@@ -5,8 +5,12 @@ from pyrogram.types import (
     InputMediaPhoto,
     Message,
 )
+from youtube_search import YoutubeSearch 
 
-link = f"https://www.youtube.com/watch?v={videoid}"
+results = YoutubeSearch(query, max_results=1).to_dict()
+
+
+link = f"https://youtube.com{results[0]['url_suffix']}"
   
 
 def play_markup(videoid, user_id):
