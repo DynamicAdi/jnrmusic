@@ -8,16 +8,6 @@ from pyrogram.types import (
 )
 from youtube_search import YoutubeSearch
 
-async def query(_, message: Message):
-   query = ""
-   for i in message.command[1:]:
-       query += " " + str(i)
-   print(query)
-
-results = YoutubeSearch(query, max_results=1).to_dict()
-
-link = f"https://youtube.com{results[0]['url_suffix']}"
-  
 
 def play_markup(videoid, user_id):
     buttons= [
@@ -28,7 +18,7 @@ def play_markup(videoid, user_id):
                 InlineKeyboardButton(text="⏹️", callback_data=f'stopvc2')
             ],
             [
-                InlineKeyboardButton(text="Oɴ  Yᴏᴜᴛᴜʙᴇ  🎥", url=f'{link}'),
+                InlineKeyboardButton(text="Oɴ  Yᴏᴜᴛᴜʙᴇ  🎥", url=f'https://www.youtube.com/watch?v={videoid}'),
                 InlineKeyboardButton(text="🔗 Other Menu", callback_data=f'other {videoid}|{user_id}'),
             ],
             [      
@@ -152,10 +142,10 @@ def search_markup2(ID6, ID7, ID8, ID9, ID10, duration6, duration7, duration8, du
     return buttons 
 
 
-def personal_markup(link):
+def personal_markup(link, videoid):
     buttons= [
             [
-                InlineKeyboardButton(text="Watch on Youtube", url=f'{link}')
+                InlineKeyboardButton(text="Watch on Youtube", url=f'https://www.youtube.com/watch?v={videoid}')
             ],
             [ 
                 InlineKeyboardButton(text="🗑 Close", callback_data=f'close2')
