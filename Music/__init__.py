@@ -73,5 +73,5 @@ def all_info(app, client):
     ASSUSERNAME = getme1.username
     ASSMENTION = getme1.mention
 app.start()
-client.start()
+client.run()
 all_info(app, client)
